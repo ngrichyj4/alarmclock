@@ -1,0 +1,97 @@
+<div class="alarm-clock clearfix">
+  <div class="today-time clearfix">
+    <div class="time clearfix">
+      <span class="time-text"><%= @time.strftime("%l:%M") %>&nbsp;</span>
+    </div>
+    <div class="period clearfix">
+      <p class="period-text"><%= @time.strftime("%p") %></p>
+    </div>
+    <span class="current-day"><%= @time.strftime("%A").upcase %></span>
+  </div>
+  <form action="/alarms/create" method="post">
+    <div class="set clearfix">
+      <span class="setalarm-text">Set alarm</span>
+      <select class="day" name="day" disabled>
+        <% @available_days.each do |day| %>
+          <option value="<%= day.downcase %>"><%= day %></option>
+        <% end %>
+      </select>
+      <input class="hour" name="hour" placeholder="HH" type="text" value="<%= @time.strftime('%l') %>">
+      <input class="minute" name="minute" placeholder="MM" type="text" value="<%= @time.strftime('%M') %>">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <select class="peiod" name="period">
+      <option value="<%= @time.strftime('%p').downcase %>" selected><%= @time.strftime("%p").upcase %></option>
+        <option value="am">AM</option>
+        <option value="pm">PM</option>
+      </select>
+      <div class="action clearfix">
+        <button class="set-alarm">Set</button>
+      </div>
+    </div>
+  </form>
+  <div class="current-alarms clearfix">
+    <span class="title">Current alarms</span>
+    <div class="alarms clearfix">
+      <% @alarms.each do |alarm| %>
+        <div class="alarm clearfix">
+          <span class="alarmtime"><%= alarm.alarm_time.strftime("%A").upcase %> - <%= alarm.alarm_time.strftime("%l:%M%p") %></span>
+          <% if Time.now < alarm.alarm_time %>
+            <div class="actions clearfix">
+              <% if !alarm.daily %> 
+                <a class="set-daily" href="/alarms/set_daily/<%= alarm.id %>">Daily</a>
+              <% else %>
+                <a class="set-daily" style="color: white; background-color:rgb(87, 178, 91);" href="/alarms/set_daily/<%= alarm.id %>">Daily</a>
+              <% end %>
+              
+              <% if !alarm.weekly %> 
+                <a class="set-weekly" href="/alarms/set_weekly/<%= alarm.id %>">Weekly</a>
+              <% else %>
+                <a class="set-weekly" style="color: white; background-color:rgb(87, 178, 91);" href="/alarms/set_weekly/<%= alarm.id %>">Weekly</a>
+              <% end %>
+              <a class="remove" href="/alarms/delete/<%= alarm.id %>">Remove</a>
+            </div>
+          <% else %>
+            <!-- Handle all cases i.e daily, weekly -->
+            <% if alarm.fired == 0 && alarm.alarm_time.strftime("%d") == @time.strftime("%d") %>
+              <!-- First time alarm ran -->
+              <div class="stop-actions clearfix" style="display: block;">
+                <a class="set-weekly" href="/alarms/snooze/<%= alarm.id %>">Snooze</a>
+                <a class="remove" href="/alarms/fired/<%= alarm.id %>">Stop</a>
+                <audio controls autoplay style="visibility: hidden;">
+                  <source src="<%= asset_path 'beep.mp3' %>" type="audio/mpeg">
+                  Your browser does not support the audio tag.
+                </audio>
+              </div>
+            <% elsif daily_alarm(alarm) %>
+              <!-- Trigger daily alarm -->
+              <div class="stop-actions clearfix" style="display: block;">
+                <a class="set-weekly" href="/alarms/snooze/<%= alarm.id %>">Snooze</a>
+                <a class="remove" href="/alarms/fired/<%= alarm.id %>">Stop</a>
+                <audio controls autoplay style="visibility: hidden;">
+                  <source src="<%= asset_path 'beep.mp3' %>" type="audio/mpeg">
+                  Your browser does not support the audio tag.
+                </audio>
+              </div>
+            <% else %>
+              <!-- If nothing else to do -->
+              <div class="actions clearfix">
+                <% if !alarm.daily %> 
+                  <a class="set-daily" href="/alarms/set_daily/<%= alarm.id %>">Daily</a>
+                <% else %>
+                  <a class="set-daily" style="color: white; background-color:rgb(87, 178, 91);" href="/alarms/set_daily/<%= alarm.id %>">Daily</a>
+                <% end %>
+                
+                <% if !alarm.weekly %> 
+                  <a class="set-weekly" href="/alarms/set_weekly/<%= alarm.id %>">Weekly</a>
+                <% else %>
+                  <a class="set-weekly" style="color: white; background-color:rgb(87, 178, 91);" href="/alarms/set_weekly/<%= alarm.id %>">Weekly</a>
+                <% end %>
+                <a class="remove" href="/alarms/delete/<%= alarm.id %>">Remove</a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

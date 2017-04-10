@@ -1,0 +1,339 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: normal 1em/1.38 Titillium-Semibold;
+  color: rgb(182, 192, 207);
+}
+
+.action {
+  float: left;
+  width: 162px;
+  height: 153px;
+  margin: -39px 0 0 3.67071%;
+  border-left: 1px solid rgb(220, 223, 228);
+  background-color: rgb(255, 255, 255);
+}
+
+.actions {
+  position: relative;
+  float: left;
+  z-index: 6;
+  width: 49.2583955223%;
+  height: 45px;
+  margin: 14px 0 0 12.55131%;
+}
+
+.actions .set-weekly {
+  margin-left: 4.54976%;
+}
+
+.alarm {
+  float: left;
+  width: 672px;
+  height: 75px;
+  border: 1px solid rgb(220, 223, 228);
+  border-top: none !important;
+  background-color: rgb(251, 248, 248);
+}
+
+.alarm-clock {
+  float: left;
+  width: 672px;
+  margin: 54px 0 0 22%;
+  padding-bottom: 100px;
+  border: 1px solid rgb(220, 223, 228);
+  background-color: rgb(255, 255, 255);
+}
+
+.alarms {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin-top: 19px;
+}
+
+.alarmtime {
+  display: block;
+  float: left;
+  margin: 21px 0 0 2.67724%;
+  font-family: Helvetica;
+  font-size: 1.363em;
+  font-weight: 400;
+  color: rgb(141, 146, 152);
+}
+
+.current-alarms {
+  float: left;
+  clear: both;
+  width: 100.2985074626%;
+  margin-left: -0.1445895523%;
+}
+
+.current-day {
+  display: block;
+  margin: 200px auto 0;
+  font-size: 1em;
+  text-align: center;
+  color: rgb(182, 192, 207);
+}
+
+.day {
+  display: block;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 17;
+  width: 150px;
+  height: 60px;
+  margin: 21px 0 0 2.70989%;
+  padding-right: 10px;
+  padding-left: 15px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.375em;
+  text-transform: uppercase;
+  color: rgb(117, 117, 117);
+}
+
+.hour {
+  display: block;
+  float: left;
+  width: 82px;
+  height: 60px;
+  margin: 21px 0 0 3.36521%;
+  padding: 0 10px 0 20px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.875em;
+  color: rgb(117, 117, 117);
+}
+
+.minute {
+  display: block;
+  float: left;
+  width: 82px;
+  height: 60px;
+  margin: 21px 0 0 3.73601%;
+  padding: 0 10px 0 15px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.875em;
+  color: rgb(117, 117, 117);
+}
+
+.peiod {
+  display: block;
+  float: left;
+  width: 82px;
+  height: 60px;
+  margin: 21px 0 0 3.22528%;
+  padding-right: 10px;
+  padding-left: 15px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.875em;
+  color: rgb(117, 117, 117);
+}
+
+.period {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 22;
+  width: 207px;
+  height: 181px;
+  margin: -181px 0 0 62.11223%;
+  background-color: rgb(222, 222, 222);
+}
+
+.period-text {
+  float: left;
+  margin: 8px 0 0 6.75574%;
+  font-family: Helvetica;
+  font-size: 7.188em;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.remove {
+  display: block;
+  float: left;
+  width: 100px;
+  height: 45px;
+  margin-left: 4.26096%;
+  padding-top: 11px;
+  border-radius: 100px;
+  background-color: rgb(252, 69, 100);
+  font-size: 0.938em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.remove:hover {
+  background-color: rgb(237, 66, 95);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.set {
+  float: left;
+  clear: both;
+  width: 672px;
+  height: 157px;
+  margin: 69px 0 0 -0.14459%;
+  border: 1px solid rgb(220, 223, 228);
+  background-color: rgb(255, 255, 255);
+}
+
+.set-alarm {
+  display: block;
+  width: 100px;
+  height: 45px;
+  margin: 50px auto 0;
+  border-radius: 100px;
+  background-color: rgb(87, 178, 91);
+  font-size: 0.938em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.set-alarm:hover {
+  background-color: rgb(77, 160, 81);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.set-daily {
+  display: block;
+  float: left;
+  width: 100px;
+  height: 45px;
+  margin-left: 0.27933%;
+  padding-top: 11px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 100px;
+  background-color: rgb(255, 255, 255);
+  font-size: 0.938em;
+  text-align: center;
+  color: rgb(182, 192, 207);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.set-weekly {
+  display: block;
+  float: left;
+  width: 100px;
+  height: 45px;
+  padding-top: 11px;
+  border: 1px solid rgb(220, 223, 228);
+  border-radius: 100px;
+  background-color: rgb(255, 255, 255);
+  font-size: 0.938em;
+  text-align: center;
+  color: rgb(182, 192, 207);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.set-daily:hover,
+.set-weekly:hover {
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: none;
+  background-color: rgb(77, 160, 81);
+  color: rgb(255, 255, 255);
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  transition: .5s;
+}
+
+.setalarm-text {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 18;
+  margin: 18px 0 0 2.70989%;
+  font-size: 1em;
+  color: rgb(182, 192, 207);
+}
+
+.stop-actions {
+  display: none;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 2;
+  width: 49.2583955223%;
+  height: 45px;
+  margin: -41px 0 0 47.96409%;
+}
+
+.stop-actions .set-weekly {
+  margin-left: 35.12925%;
+}
+
+.time {
+  position: relative;
+  float: left;
+  z-index: 24;
+  width: 341px;
+  height: 181px;
+  margin-left: 0.01996%;
+  border: 1px solid rgb(220, 223, 228);
+  background-color: rgb(255, 255, 255);
+}
+
+.time-text {
+  display: block;
+  float: left;
+  margin: -9px 0 0 8.5177%;
+  font-family: Helvetica;
+  font-size: 8.75em;
+  font-weight: 700;
+  color: rgb(182, 192, 207);
+}
+
+.title {
+  display: block;
+  float: left;
+  margin: 21px 0 0 2.82041%;
+  font-size: 1em;
+  color: rgb(182, 192, 207);
+}
+
+.today-time {
+  float: left;
+  width: 81.7910447761%;
+  height: 181px;
+  margin: 71px 0 0 9.07183%;
+}
