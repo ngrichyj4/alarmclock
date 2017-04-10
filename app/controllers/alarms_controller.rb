@@ -3,6 +3,7 @@ class AlarmsController < ApplicationController
     @time = Time.now
     @alarms = Alarm.all
     @available_days = available_days
+    Alarm.update_all(background: false)
   end
 
   def create
@@ -16,12 +17,14 @@ class AlarmsController < ApplicationController
   def set_daily
     alarm = Alarm.find params[:id]
     alarm.update_attributes(daily: alarm.daily.nil? ? true : !alarm.daily) # toggle
+    alarm.update_attributes(weekly: false) if alarm.daily
     redirect_to :root
   end
 
   def set_weekly
     alarm = Alarm.find params[:id]
     alarm.update_attributes(weekly: alarm.weekly.nil? ? true : !alarm.weekly)
+    alarm.update_attributes(daily: false) if alarm.weekly
     redirect_to :root
   end
 
@@ -35,6 +38,11 @@ class AlarmsController < ApplicationController
     alarm = Alarm.find params[:id]
     alarm.update_attributes(alarm_time: Time.now.advance(minutes: 15), fired: 0)
     redirect_to :root
+  end
+
+  def set_background_tab
+    Alarm.update_all(background: params[:value])
+    render text: 'success'
   end
 
   def fired

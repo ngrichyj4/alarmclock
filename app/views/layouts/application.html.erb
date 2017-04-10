@@ -13,5 +13,28 @@
 
 <%= yield %>
 
+
+<script type="text/javascript">
+	$.ajaxSetup({ async : false })
+	$(window).bind('beforeunload', function(){ 
+      $.ajax({
+        url: '/alarms/set_background_tab',
+        type: "POST",
+        data: "value=true",
+        success: function(response){
+
+        }
+        });
+    } );
+
+	$.ajax({
+    url: '/alarms/set_background_tab',
+    type: "POST",
+    data: "value=false",
+    success: function(response){
+
+    }
+    });
+</script>
 </body>
 </html>

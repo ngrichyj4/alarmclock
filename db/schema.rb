@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408003717) do
+ActiveRecord::Schema.define(version: 20170410201132) do
 
   create_table "alarms", force: :cascade do |t|
     t.boolean  "daily"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170408003717) do
     t.datetime "updated_at",             null: false
     t.integer  "fired",      default: 0
     t.datetime "alarm_time"
+    t.boolean  "background"
   end
 
 end

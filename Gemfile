@@ -27,6 +27,7 @@ gem 'thin'
 gem 'gon'
 gem 'colorize'
 gem 'awesome_print'
+gem 'watir-webdriver'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

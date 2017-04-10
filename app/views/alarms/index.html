@@ -72,6 +72,16 @@
                   Your browser does not support the audio tag.
                 </audio>
               </div>
+            <% elsif weekly_alarm(alarm) %>
+              <!-- Trigger daily alarm -->
+              <div class="stop-actions clearfix" style="display: block;">
+                <a class="set-weekly" href="/alarms/snooze/<%= alarm.id %>">Snooze</a>
+                <a class="remove" href="/alarms/fired/<%= alarm.id %>">Stop</a>
+                <audio controls autoplay style="visibility: hidden;">
+                  <source src="<%= asset_path 'beep.mp3' %>" type="audio/mpeg">
+                  Your browser does not support the audio tag.
+                </audio>
+              </div>
             <% else %>
               <!-- If nothing else to do -->
               <div class="actions clearfix">
